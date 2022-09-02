@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+<title>Queen&#39;s Attack II - LunarScents&#39;s DevLog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link rel="canonical" href="https://lunarscents.github.io/2019/09/25/queensattackii/">
+
+    <meta name="description" content="You will be given a square chess board with one queen and a number of obstacles placed on it. Determine how many squares the queen can attack. A queen is standing on an n x n chessboard. The chess boa">
+<meta name="keywords" content="Algorithm,JavaScript,ES6,HackerRank,Problem Solving">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Queen&#39;s Attack II">
+<meta property="og:url" content="https://lunarscents.github.io/2019/09/25/queensAttackII/index.html">
+<meta property="og:site_name" content="LunarScents&#39;s DevLog">
+<meta property="og:description" content="You will be given a square chess board with one queen and a number of obstacles placed on it. Determine how many squares the queen can attack. A queen is standing on an n x n chessboard. The chess boa">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://lunarscents.github.io/images/hackerrank.jpeg">
+<meta property="og:updated_time" content="2022-09-02T09:27:33.686Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Queen&#39;s Attack II">
+<meta name="twitter:description" content="You will be given a square chess board with one queen and a number of obstacles placed on it. Determine how many squares the queen can attack. A queen is standing on an n x n chessboard. The chess boa">
+<meta name="twitter:image" content="https://lunarscents.github.io/images/hackerrank.jpeg">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/avatar.svg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-137179603-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-137179603-1');
+</script>
+
+
+    
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-2-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <i class="fas fa-code"></i>
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/">Home</a>
+                
+                <a class="navbar-item" href="/archives">Archives</a>
+                
+                <a class="navbar-item" href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="Download on GitHub" href="https://lunarscents.github.io">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                
+                <a class="navbar-item search" title="Search" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-8-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-image">
+        <span class="image is-7by1">
+            <img class="thumbnail" src="/images/hackerrank.jpeg" alt="Queen&#39;s Attack II">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-09-25T03:20:00.000Z">2019-09-25</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Algorithm/HackerRank/">HackerRank</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Algorithm/HackerRank/Problem-Solving/">Problem Solving</a>
+                </div>
+                
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                Queen&#39;s Attack II
+            
+        </h1>
+        <div class="content">
+            <p>You will be given a square chess board with one queen and a number of obstacles placed on it. Determine how many squares the queen can attack.</p>
+<p>A queen is standing on an <strong>n x n</strong> chessboard. The chess board’s rows are numbered from <strong>1</strong> to <strong>n</strong>, going from bottom to top. Its columns are numbered from <strong>1</strong> to <strong>n</strong>, going from left to right. Each square is referenced by a tuple, <strong>(r, c)</strong>, describing the row, <strong>r</strong>, and column, <strong>c</strong>, where the square is located.</p>
+<p>The queen is standing at position <strong>(r<sub>q</sub>, c<sub>q</sub>)</strong>. In a single move, she can attack any square in any of the eight directions (left, right, up, down, and the four diagonals). In the diagram below, the green circles denote all the cells the queen can attack from <strong>(4, 4)</strong>:</p>
+<p><img src="https://s3.amazonaws.com/hr-challenge-images/0/1485426500-a4039ebb00-chess1.png" alt></p>
+<a id="more"></a>
+
+<p>There are obstacles on the chessboard, each preventing the queen from attacking any square beyond it on that path. For example, an obstacle at location <strong>(3, 5)</strong> in the diagram above prevents the queen from attacking cells <strong>(3, 5)</strong>, <strong>(2, 6)</strong>, and <strong>(1, 7)</strong>:</p>
+<p><img src="https://s3.amazonaws.com/hr-challenge-images/0/1485459132-3fdc1f1ca3-chess_4_.png" alt></p>
+<p>Given the queen’s position and the locations of all the obstacles, find and print the number of squares the queen can attack from her position at . In the board above, there are such squares.</p>
+<h2 id="Function-Description"><a href="#Function-Description" class="headerlink" title="Function Description"></a>Function Description</h2><p>Complete the queensAttack function in the editor below. It should return an integer that describes the number of squares the queen can attack.</p>
+<p>queensAttack has the following parameters:</p>
+<ul>
+<li>n: an integer, the number of rows and columns in the board</li>
+<li>k: an integer, the number of obstacles on the board</li>
+<li>r_q: integer, the row number of the queen’s position</li>
+<li>c_q: integer, the column number of the queen’s position</li>
+<li>obstacles: a two dimensional array of integers where each element is an array of <strong>2</strong> integers, the row and column of an obstacle</li>
+</ul>
+<h2 id="Input-Format"><a href="#Input-Format" class="headerlink" title="Input Format"></a>Input Format</h2><p>The first line contains two space-separated integers <strong>n</strong> and <strong>k</strong>, the length of the board’s sides and the number of obstacles.<br><br>The next line contains two space-separated integers <strong>r<sub>q</sub></strong> and <strong>c<sub>q</sub></strong>, the queen’s row and column position.<br><br>Each of the next <strong>k</strong> lines contains two space-separated integers <strong>r[i]</strong> and <strong>c[i]</strong>, the row and column position of <strong>obstacle[i]</strong>. <br></p>
+<h2 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h2><ul>
+<li>1 &lt;= n &lt;= 10<sup>5</sup></li>
+<li>1 &lt;= k &lt;= 10<sup>5</sup></li>
+<li>A single cell may contain more than one obstacle.</li>
+<li>There will never be an obstacle at the position where the queen is located.</li>
+</ul>
+<h2 id="Subtasks"><a href="#Subtasks" class="headerlink" title="Subtasks"></a>Subtasks</h2><p>For <strong>30%</strong> of the maximum score:<br></p>
+<ul>
+<li>0 &lt; n &lt;= 100</li>
+<li>0 &lt;= k &lt;= 100</li>
+</ul>
+<p>For <strong>55%</strong> of the maximum score:<br></p>
+<ul>
+<li>0 &lt; n &lt;= 1000</li>
+<li>0 &lt;= k &lt;= 10<sup>5</sup></li>
+</ul>
+<h2 id="Output-Format"><a href="#Output-Format" class="headerlink" title="Output Format"></a>Output Format</h2><p>Print the number of squares that the queen can attack from position <strong>(r<sub>q</sub>, c<sub>q</sub>)</strong></p>
+<h2 id="Sample-Input-0"><a href="#Sample-Input-0" class="headerlink" title="Sample Input 0"></a>Sample Input 0</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">4 0</span><br><span class="line">4 4</span><br></pre></td></tr></table></figure>
+
+<h2 id="Sample-Output-0"><a href="#Sample-Output-0" class="headerlink" title="Sample Output 0"></a>Sample Output 0</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">9</span><br></pre></td></tr></table></figure>
+
+<h2 id="Explanation-0"><a href="#Explanation-0" class="headerlink" title="Explanation 0"></a>Explanation 0</h2><p>The queen is standing at position <strong>(4, 4)</strong> on a <strong>4 x 4</strong> chessboard with no obstacles:<br></p>
+<p><img src="https://s3.amazonaws.com/hr-challenge-images/0/1485426553-3064e08638-chess2.png" alt></p>
+<h2 id="Sample-Input-1"><a href="#Sample-Input-1" class="headerlink" title="Sample Input 1"></a>Sample Input 1</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">5 3</span><br><span class="line">4 3</span><br><span class="line">5 5</span><br><span class="line">4 2</span><br><span class="line">2 3</span><br></pre></td></tr></table></figure>
+
+<h2 id="Sample-Output-1"><a href="#Sample-Output-1" class="headerlink" title="Sample Output 1"></a>Sample Output 1</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">10</span><br></pre></td></tr></table></figure>
+
+<h2 id="Explanation-1"><a href="#Explanation-1" class="headerlink" title="Explanation 1"></a>Explanation 1</h2><p>The queen is standing at position <strong>(4, 3)</strong> on a <strong>5 x 5</strong> chessboard with <strong>k = 3</strong> obstacles:<br></p>
+<p><img src="https://s3.amazonaws.com/hr-challenge-images/0/1485426870-84a6a0ce97-chess3.png" alt></p>
+<p>The number of squares she can attack from that position is <strong>10</strong>.</p>
+<h2 id="Sample-Input-2"><a href="#Sample-Input-2" class="headerlink" title="Sample Input 2"></a>Sample Input 2</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1 0</span><br><span class="line">1 1</span><br></pre></td></tr></table></figure>
+
+<h2 id="Sample-Output-2"><a href="#Sample-Output-2" class="headerlink" title="Sample Output 2"></a>Sample Output 2</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0</span><br></pre></td></tr></table></figure>
+
+<h2 id="Explanation-2"><a href="#Explanation-2" class="headerlink" title="Explanation 2"></a>Explanation 2</h2><p>Since there is only one square, and the queen is on it, the queen can move 0 squares.</p>
+<hr>
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// Complete the queensAttack function below.</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">queensAttack</span>(<span class="hljs-params">n, k, r_q, c_q, obstacles</span>) </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">let</span> up = n - r_q;</span><br><span class="line">  <span class="hljs-keyword">let</span> right = n - c_q;</span><br><span class="line">  <span class="hljs-keyword">let</span> down = r_q - <span class="hljs-number">1</span>;</span><br><span class="line">  <span class="hljs-keyword">let</span> left = c_q - <span class="hljs-number">1</span>;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-keyword">let</span> up_left = <span class="hljs-built_in">Math</span>.min(up, left);</span><br><span class="line">  <span class="hljs-keyword">let</span> up_right = n - <span class="hljs-built_in">Math</span>.max(c_q, r_q);</span><br><span class="line">  <span class="hljs-keyword">let</span> down_left = <span class="hljs-built_in">Math</span>.min(c_q, r_q) - <span class="hljs-number">1</span>;</span><br><span class="line">  <span class="hljs-keyword">let</span> down_right = <span class="hljs-built_in">Math</span>.min(r_q - <span class="hljs-number">1</span>, n - c_q);</span><br><span class="line"></span><br><span class="line">  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i <span class="hljs-keyword">of</span> <span class="hljs-built_in">Array</span>.from(&#123; <span class="hljs-attr">length</span>: k &#125;, (value, index) =&gt; index)) &#123;</span><br><span class="line">    <span class="hljs-keyword">let</span> &#123; <span class="hljs-number">0</span>: r_o, <span class="hljs-number">1</span>: c_o &#125; = obstacles[i];</span><br><span class="line"></span><br><span class="line">    r_o == r_q &amp;&amp;</span><br><span class="line">      (c_o &gt; c_q</span><br><span class="line">        ? (up = <span class="hljs-built_in">Math</span>.min(up, c_o - c_q - <span class="hljs-number">1</span>))</span><br><span class="line">        : (down = <span class="hljs-built_in">Math</span>.min(down, c_q - c_o - <span class="hljs-number">1</span>)));</span><br><span class="line"></span><br><span class="line">    c_o == c_q &amp;&amp;</span><br><span class="line">      (r_o &gt; r_q</span><br><span class="line">        ? (right = <span class="hljs-built_in">Math</span>.min(right, r_o - r_q - <span class="hljs-number">1</span>))</span><br><span class="line">        : (left = <span class="hljs-built_in">Math</span>.min(left, r_q - r_o - <span class="hljs-number">1</span>)));</span><br><span class="line"></span><br><span class="line">    <span class="hljs-built_in">Math</span>.abs(c_o - c_q) == <span class="hljs-built_in">Math</span>.abs(r_o - r_q) &amp;&amp;</span><br><span class="line">      (c_o &gt; c_q &amp;&amp; r_o &gt; r_q &amp;&amp; (up_right = <span class="hljs-built_in">Math</span>.min(up_right, c_o - c_q - <span class="hljs-number">1</span>)),</span><br><span class="line">      c_o &gt; c_q &amp;&amp;</span><br><span class="line">        r_o &lt; r_q &amp;&amp;</span><br><span class="line">        (down_right = <span class="hljs-built_in">Math</span>.min(down_right, c_o - c_q - <span class="hljs-number">1</span>)),</span><br><span class="line">      c_o &lt; c_q &amp;&amp; r_o &gt; r_q &amp;&amp; (up_left = <span class="hljs-built_in">Math</span>.min(up_left, c_q - c_o - <span class="hljs-number">1</span>)),</span><br><span class="line">      c_o &lt; c_q &amp;&amp;</span><br><span class="line">        r_o &lt; r_q &amp;&amp;</span><br><span class="line">        (down_left = <span class="hljs-built_in">Math</span>.min(down_left, c_q - c_o - <span class="hljs-number">1</span>)));</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-keyword">return</span> right + left + up + down + down_left + up_left + down_right + up_right;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Algorithm/">Algorithm</a>, <a class="has-link-grey -link" href="/tags/ES6/">ES6</a>, <a class="has-link-grey -link" href="/tags/HackerRank/">HackerRank</a>, <a class="has-link-grey -link" href="/tags/JavaScript/">JavaScript</a>, <a class="has-link-grey -link" href="/tags/Problem-Solving/">Problem Solving</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/09/26/acmICPCTeam/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">ACM ICPC Team</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/09/24/non-DivisibleSubset/">
+                <span class="level-item">Non-Divisible Subset</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">Comments</h3>
+        
+<script>
+    var disqus_config = function () {
+        this.page.url = 'https://lunarscents.github.io/2019/09/25/queensAttackII/';
+        this.page.identifier = '2019/09/25/queensAttackII/';
+    };
+    (function() {
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'LunarScents' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<div id="disqus_thread">
+    
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-4-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    
+                        <img class="image is-128x128 has-mb-6" src="/images/avatar.svg" alt="LunarScents">
+                    
+                    
+                    <p class="is-size-4 is-block">
+                        LunarScents
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        Front-end Developer.
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>Seoul</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Posts
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        166
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Categories
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        17
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Tags
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        26
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/lunarscents" target="_blank" rel="external nofollow noopener noreferrer">
+                Follow</a>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="https://github.com/lunarscents" rel="external nofollow noopener noreferrer">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Facebook" href="https://facebook.com" rel="external nofollow noopener noreferrer">
+                
+                <i class="fab fa-facebook"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="RSS" href="/">
+                
+                <i class="fas fa-rss"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Categories
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/Algorithm/">
+            <span class="level-start">
+                <span class="level-item">Algorithm</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">161</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/Algorithm/HackerRank/">
+            <span class="level-start">
+                <span class="level-item">HackerRank</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">119</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Algorithm/Programmers/">
+            <span class="level-start">
+                <span class="level-item">Programmers</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">41</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/Basic-for-Web/">
+            <span class="level-start">
+                <span class="level-item">Basic for Web</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/Basic-for-Web/Browsers/">
+            <span class="level-start">
+                <span class="level-item">Browsers</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/JS-Library/">
+            <span class="level-start">
+                <span class="level-item">JS Library</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/JS-Library/React/">
+            <span class="level-start">
+                <span class="level-item">React</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/Settings/">
+            <span class="level-start">
+                <span class="level-item">Settings</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/Settings/Development-Environment/">
+            <span class="level-start">
+                <span class="level-item">Development Environment</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Settings/Hexo/">
+            <span class="level-start">
+                <span class="level-item">Hexo</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/Tools/">
+            <span class="level-start">
+                <span class="level-item">Tools</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/Tools/Hexo/">
+            <span class="level-start">
+                <span class="level-item">Hexo</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/10/11/fairRations/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/hackerrank.jpeg" alt="Fair Rations">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-11T13:17:45.000Z">2019-10-11</time></div>
+                    <a href="/2019/10/11/fairRations/" class="has-link-black-ter is-size-6">Fair Rations</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a> / <a class="has-link-grey -link" href="/categories/Algorithm/HackerRank/">HackerRank</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/10/10/flatlandSpaceStations/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/hackerrank.jpeg" alt="Flatland Space Stations">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-10T00:50:51.000Z">2019-10-10</time></div>
+                    <a href="/2019/10/10/flatlandSpaceStations/" class="has-link-black-ter is-size-6">Flatland Space Stations</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a> / <a class="has-link-grey -link" href="/categories/Algorithm/HackerRank/">HackerRank</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/10/08/lisaWorkbook/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/hackerrank.jpeg" alt="Lisa&#39;s Workbook">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-07T15:02:06.000Z">2019-10-08</time></div>
+                    <a href="/2019/10/08/lisaWorkbook/" class="has-link-black-ter is-size-6">Lisa&#39;s Workbook</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a> / <a class="has-link-grey -link" href="/categories/Algorithm/HackerRank/">HackerRank</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">11</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/09/">
+                <span class="level-start">
+                    <span class="level-item">September 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">5</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">18</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">40</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">86</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/05/">
+                <span class="level-start">
+                    <span class="level-item">May 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">6</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Tag Cloud
+        </h3>
+        <a href="/tags/10Days-of-JS/" style="font-size: 13px;">10Days of JS</a> <a href="/tags/30Days-of-Code/" style="font-size: 14px;">30Days of Code</a> <a href="/tags/Algorithm/" style="font-size: 20px;">Algorithm</a> <a href="/tags/Basic-for-Web/" style="font-size: 10px;">Basic for Web</a> <a href="/tags/Blog/" style="font-size: 10px;">Blog</a> <a href="/tags/Browsers/" style="font-size: 10px;">Browsers</a> <a href="/tags/Development-Environment-in-MacOS/" style="font-size: 10px;">Development Environment in MacOS</a> <a href="/tags/ES6/" style="font-size: 19px;">ES6</a> <a href="/tags/Front-End/" style="font-size: 10px;">Front-End</a> <a href="/tags/Generator/" style="font-size: 10px;">Generator</a> <a href="/tags/Github-Pages/" style="font-size: 10px;">Github Pages</a> <a href="/tags/HackerRank/" style="font-size: 18px;">HackerRank</a> <a href="/tags/Hexo/" style="font-size: 11px;">Hexo</a> <a href="/tags/How-Browsers-work/" style="font-size: 10px;">How Browsers work</a> <a href="/tags/JS-Library/" style="font-size: 10px;">JS Library</a> <a href="/tags/JavaScript/" style="font-size: 19px;">JavaScript</a> <a href="/tags/Level1/" style="font-size: 15px;">Level1</a> <a href="/tags/Level2/" style="font-size: 12px;">Level2</a> <a href="/tags/Loops/" style="font-size: 10px;">Loops</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/Problem-Solving/" style="font-size: 17px;">Problem Solving</a> <a href="/tags/Programmers/" style="font-size: 16px;">Programmers</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/RoadMap/" style="font-size: 10px;">RoadMap</a> <a href="/tags/Settings/" style="font-size: 11px;">Settings</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a>
+    </div>
+</div>
+
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen is-sticky">
+        
+        </div>
+    
+</div>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/avatar.svg" alt="Queen&#39;s Attack II" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2022 LunarScents&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a> & <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="external nofollow noopener noreferrer">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/" rel="external nofollow noopener noreferrer">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/" rel="external nofollow noopener noreferrer">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus" rel="external nofollow noopener noreferrer">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>
+  moment.locale("en");
+</script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4247154102678923" crossorigin="anonymous"></script>
+
+  
+    
+    <script src="/js/animation.js"></script>
+    
+  
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+  
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/" rel="external nofollow noopener noreferrer" target="_blank">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+  
+
+<a id="back-to-top" title="Back to Top" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+  
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+    <script src="/js/clipboard.js" defer></script>
+    
+     <script src="/js/main.js" defer></script>
+
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something...">
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>
