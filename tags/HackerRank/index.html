@@ -156,6 +156,79 @@
     <div class="card">
     
     <div class="card-image">
+        <a href="/2022/09/18/cavity-map/" class="image is-7by1">
+            <img class="thumbnail" src="/images/hackerrank.jpeg" alt="Cavity Map">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2022-09-18T11:11:43.000Z">2022-09-18</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Algorithm/HackerRank/">HackerRank</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Algorithm/HackerRank/Problem-Solving/">Problem Solving</a>
+                </div>
+                
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2022/09/18/cavity-map/">Cavity Map</a>
+            
+        </h1>
+        <div class="content">
+            <p>You are given a square map as a matrix of integer strings. Each cell of the map has a value denoting its depth. We will call a cell of the map a cavity if and only if this cell is not on the border of the map and each cell adjacent to it has strictly smaller depth. Two cells are adjacent if they have a common side, or edge.</p>
+<p>Find all the cavities on the map and replace their depths with the uppercase character X.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong><p align="center">grid = [‘989’, ‘191’, ‘111’]</p></strong></p>
+<p>The grid is rearranged for clarity:</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">989</span><br><span class="line">191</span><br><span class="line">111</span><br></pre></td></tr></table></figure>
+
+<p>Return:</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">989</span><br><span class="line">1X1</span><br><span class="line">111</span><br></pre></td></tr></table></figure>
+
+<p>The center cell was deeper than those on its edges: [8,1,1,1]. The deep cells in the top two corners do not share an edge with the center cell, and none of the border cells is eligible.</p>
+<h2 id="Function-Description"><a href="#Function-Description" class="headerlink" title="Function Description"></a>Function Description</h2><p>Complete the cavityMap function in the editor below.</p>
+<p>cavityMap has the following parameter(s):</p>
+<p>string grid[n]: each string represents a row of the grid</p>
+<h2 id="Returns"><a href="#Returns" class="headerlink" title="Returns"></a>Returns</h2><p>string{n}: the modified grid</p>
+<h2 id="Input-Format"><a href="#Input-Format" class="headerlink" title="Input Format"></a>Input Format</h2><p>The first line contains an integer , the number of rows and columns in the grid.</p>
+<p>Each of the following lines (rows) contains positive digits without spaces (columns) that represent the depth at .</p>
+<h2 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h2><ul>
+<li>1 &lt;= n &lt;= 100</li>
+</ul>
+<h2 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">STDIN   Function</span><br><span class="line">-----   --------</span><br><span class="line">4       grid[] size n = 4</span><br><span class="line">1112    grid = [&apos;1112&apos;, &apos;1912&apos;, &apos;1892&apos;, &apos;1234&apos;]</span><br><span class="line">1912</span><br><span class="line">1892</span><br><span class="line">1234</span><br></pre></td></tr></table></figure>
+
+<h2 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1112</span><br><span class="line">1X12</span><br><span class="line">18X2</span><br><span class="line">1234</span><br></pre></td></tr></table></figure>
+
+<h2 id="Explanation"><a href="#Explanation" class="headerlink" title="Explanation"></a>Explanation</h2><p>The two cells with the depth of 9 are not on the border and are surrounded on all sides by shallower cells. Their values are replaced by X.</p>
+<hr>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><h3 id="Solution-1-with-JS"><a href="#Solution-1-with-JS" class="headerlink" title="Solution 1 with JS"></a>Solution 1 with JS</h3><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">/*</span></span><br><span class="line"><span class="hljs-comment"> * Complete the 'cavityMap' function below.</span></span><br><span class="line"><span class="hljs-comment"> *</span></span><br><span class="line"><span class="hljs-comment"> * The function is expected to return a STRING_ARRAY.</span></span><br><span class="line"><span class="hljs-comment"> * The function accepts STRING_ARRAY grid as parameter.</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">cavityMap</span>(<span class="hljs-params">grid</span>) </span>&#123;</span><br><span class="line">  <span class="hljs-comment">// Write your code here</span></span><br><span class="line">  <span class="hljs-keyword">const</span> cavities = grid.map(<span class="hljs-function"><span class="hljs-params">item</span> =&gt;</span> item.split(<span class="hljs-string">''</span>));</span><br><span class="line"></span><br><span class="line">  <span class="hljs-keyword">return</span> cavities.reduce(<span class="hljs-function">(<span class="hljs-params">target, list, index, source</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="hljs-keyword">const</span> result = list</span><br><span class="line">      .reduce(<span class="hljs-function">(<span class="hljs-params">listTarget, item, itemIndex</span>) =&gt;</span> &#123;</span><br><span class="line">        listTarget.push(</span><br><span class="line">          index &gt;= <span class="hljs-number">1</span> &amp;&amp;</span><br><span class="line">            itemIndex &gt;= <span class="hljs-number">1</span> &amp;&amp;</span><br><span class="line">            index &lt; source.length - <span class="hljs-number">1</span> &amp;&amp;</span><br><span class="line">            itemIndex &lt; list.length &amp;&amp;</span><br><span class="line">            item &gt; source[index][itemIndex - <span class="hljs-number">1</span>] &amp;&amp;</span><br><span class="line">            item &gt; source[index][itemIndex + <span class="hljs-number">1</span>] &amp;&amp;</span><br><span class="line">            item &gt; source[index - <span class="hljs-number">1</span>][itemIndex] &amp;&amp;</span><br><span class="line">            item &gt; source[index + <span class="hljs-number">1</span>][itemIndex]</span><br><span class="line">            ? <span class="hljs-string">'X'</span></span><br><span class="line">            : item</span><br><span class="line">        );</span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">return</span> listTarget;</span><br><span class="line">      &#125;, [])</span><br><span class="line">      .join(<span class="hljs-string">''</span>);</span><br><span class="line"></span><br><span class="line">    target.push(result);</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">return</span> target;</span><br><span class="line">  &#125;, []);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Solution-2-with-TS"><a href="#Solution-2-with-TS" class="headerlink" title="Solution 2 with TS"></a>Solution 2 with TS</h3><figure class="highlight typescript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">/*</span></span><br><span class="line"><span class="hljs-comment"> * Complete the 'cavityMap' function below.</span></span><br><span class="line"><span class="hljs-comment"> *</span></span><br><span class="line"><span class="hljs-comment"> * The function is expected to return a STRING_ARRAY.</span></span><br><span class="line"><span class="hljs-comment"> * The function accepts STRING_ARRAY grid as parameter.</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">cavityMap</span>(<span class="hljs-params">grid: <span class="hljs-built_in">string</span>[]</span>): <span class="hljs-title">string</span>[] </span>&#123;</span><br><span class="line">  <span class="hljs-comment">// Write your code here</span></span><br><span class="line">  <span class="hljs-keyword">const</span> cavities: <span class="hljs-built_in">string</span>[][] = grid.map(<span class="hljs-function"><span class="hljs-params">item</span> =&gt;</span> (item || <span class="hljs-string">''</span>).split(<span class="hljs-string">''</span>));</span><br><span class="line"></span><br><span class="line">  <span class="hljs-keyword">return</span> cavities.reduce(<span class="hljs-function">(<span class="hljs-params">target, list, index, source</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="hljs-keyword">const</span> result = list</span><br><span class="line">      .reduce(<span class="hljs-function">(<span class="hljs-params">listTarget, item, itemIndex</span>) =&gt;</span> &#123;</span><br><span class="line">        listTarget.push(</span><br><span class="line">          index &gt;= <span class="hljs-number">1</span> &amp;&amp;</span><br><span class="line">            itemIndex &gt;= <span class="hljs-number">1</span> &amp;&amp;</span><br><span class="line">            index &lt; source.length - <span class="hljs-number">1</span> &amp;&amp;</span><br><span class="line">            itemIndex &lt; list.length &amp;&amp;</span><br><span class="line">            item &gt; source[index][itemIndex - <span class="hljs-number">1</span>] &amp;&amp;</span><br><span class="line">            item &gt; source[index][itemIndex + <span class="hljs-number">1</span>] &amp;&amp;</span><br><span class="line">            item &gt; source[index - <span class="hljs-number">1</span>][itemIndex] &amp;&amp;</span><br><span class="line">            item &gt; source[index + <span class="hljs-number">1</span>][itemIndex]</span><br><span class="line">            ? <span class="hljs-string">'X'</span></span><br><span class="line">            : item</span><br><span class="line">        );</span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">return</span> listTarget;</span><br><span class="line">      &#125;, [] <span class="hljs-keyword">as</span> <span class="hljs-built_in">string</span>[])</span><br><span class="line">      .join(<span class="hljs-string">''</span>);</span><br><span class="line"></span><br><span class="line">    target.push(result);</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">return</span> target;</span><br><span class="line">  &#125;, [] <span class="hljs-keyword">as</span> <span class="hljs-built_in">string</span>[]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
         <a href="/2019/10/11/fairRations/" class="image is-7by1">
             <img class="thumbnail" src="/images/hackerrank.jpeg" alt="Fair Rations">
         </a>
@@ -658,60 +731,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/10/01/modifiedKaprekarNumbers/" class="image is-7by1">
-            <img class="thumbnail" src="/images/hackerrank.jpeg" alt="Modified Kaprekar Numbers">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-10-01T00:30:00.000Z">2019-10-01</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Algorithm/HackerRank/">HackerRank</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Algorithm/HackerRank/Problem-Solving/">Problem Solving</a>
-                </div>
-                
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/10/01/modifiedKaprekarNumbers/">Modified Kaprekar Numbers</a>
-            
-        </h1>
-        <div class="content">
-            <p>A modified Kaprekar number is a positive whole number with a special property. If you square it, then split the number into two integers and sum those integers, you have the same value you started with.</p>
-<p>Consider a positive whole number <strong>n</strong> with <strong>d</strong> digits. We square <strong>n</strong> to arrive at a number that is either <strong>2 x d</strong> digits long or <strong>(2 x d) - 1</strong> digits long. Split the string representation of the square into two parts, <strong>l</strong> and <strong>r</strong>. The right hand part, <strong>r</strong> must be <strong>d</strong> digits long. The left is the remaining substring. Convert those two substrings back to integers, add them and see if you get <strong>n</strong>.</p>
-<p>For example, if <strong>n = 5</strong>, <strong>d = 1</strong> then <strong>n<sup>2</sup> = 25</strong>. We split that into two strings and convert them back to integers <strong>2</strong> and <strong>5</strong>. We test <img src="https://latex.codecogs.com/gif.latex?2&space;+&space;5&space;=&space;7&space;%5Cneq&space;5" alt>, so this is not a modified Kaprekar number. If <strong>n = 9</strong>, still <strong>d = 1</strong>, and <strong>n<sup>2</sup> = 81</strong>. This gives us <strong>1 + 8 = 9</strong>, the original <strong>n</strong>.</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/10/01/modifiedKaprekarNumbers/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -778,7 +797,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        167
+                        168
                     </p>
                 </div>
             </div>
@@ -850,7 +869,7 @@
                 <span class="level-item">Algorithm</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">161</span>
+                <span class="level-item tag">162</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/Algorithm/HackerRank/">
@@ -858,7 +877,7 @@
                 <span class="level-item">HackerRank</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">119</span>
+                <span class="level-item tag">120</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Algorithm/Programmers/">
@@ -963,6 +982,25 @@
         
         <article class="media">
             
+            <a href="/2022/09/18/cavity-map/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/hackerrank.jpeg" alt="Cavity Map">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2022-09-18T11:11:43.000Z">2022-09-18</time></div>
+                    <a href="/2022/09/18/cavity-map/" class="has-link-black-ter is-size-6">Cavity Map</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a> / <a class="has-link-grey -link" href="/categories/Algorithm/HackerRank/">HackerRank</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/06/05/typescriptBasics/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/typescript.jpg" alt="TypeScript Basics">
@@ -999,25 +1037,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/10/10/flatlandSpaceStations/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/hackerrank.jpeg" alt="Flatland Space Stations">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-10T00:50:51.000Z">2019-10-10</time></div>
-                    <a href="/2019/10/10/flatlandSpaceStations/" class="has-link-black-ter is-size-6">Flatland Space Stations</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a> / <a class="has-link-grey -link" href="/categories/Algorithm/HackerRank/">HackerRank</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1029,6 +1048,17 @@
             Archives
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2022/09/">
+                <span class="level-start">
+                    <span class="level-item">September 2022</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2020/06/">
@@ -1118,7 +1148,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/10Days-of-JS/" style="font-size: 13px;">10Days of JS</a> <a href="/tags/30Days-of-Code/" style="font-size: 14px;">30Days of Code</a> <a href="/tags/Algorithm/" style="font-size: 20px;">Algorithm</a> <a href="/tags/Basic-for-Web/" style="font-size: 10px;">Basic for Web</a> <a href="/tags/Blog/" style="font-size: 10px;">Blog</a> <a href="/tags/Browsers/" style="font-size: 10px;">Browsers</a> <a href="/tags/Development-Environment-in-MacOS/" style="font-size: 10px;">Development Environment in MacOS</a> <a href="/tags/ES6/" style="font-size: 19px;">ES6</a> <a href="/tags/Front-End/" style="font-size: 11px;">Front-End</a> <a href="/tags/Generator/" style="font-size: 10px;">Generator</a> <a href="/tags/Github-Pages/" style="font-size: 10px;">Github Pages</a> <a href="/tags/HackerRank/" style="font-size: 18px;">HackerRank</a> <a href="/tags/Hexo/" style="font-size: 11px;">Hexo</a> <a href="/tags/How-Browsers-work/" style="font-size: 10px;">How Browsers work</a> <a href="/tags/JS-Library/" style="font-size: 10px;">JS Library</a> <a href="/tags/JavaScript/" style="font-size: 19px;">JavaScript</a> <a href="/tags/Level1/" style="font-size: 15px;">Level1</a> <a href="/tags/Level2/" style="font-size: 12px;">Level2</a> <a href="/tags/Loops/" style="font-size: 10px;">Loops</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/Problem-Solving/" style="font-size: 17px;">Problem Solving</a> <a href="/tags/Programmers/" style="font-size: 16px;">Programmers</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/RoadMap/" style="font-size: 10px;">RoadMap</a> <a href="/tags/Settings/" style="font-size: 11px;">Settings</a> <a href="/tags/TypeScript/" style="font-size: 10px;">TypeScript</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a>
+        <a href="/tags/10Days-of-JS/" style="font-size: 13px;">10Days of JS</a> <a href="/tags/30Days-of-Code/" style="font-size: 14px;">30Days of Code</a> <a href="/tags/Algorithm/" style="font-size: 20px;">Algorithm</a> <a href="/tags/Basic-for-Web/" style="font-size: 10px;">Basic for Web</a> <a href="/tags/Blog/" style="font-size: 10px;">Blog</a> <a href="/tags/Browsers/" style="font-size: 10px;">Browsers</a> <a href="/tags/Development-Environment-in-MacOS/" style="font-size: 10px;">Development Environment in MacOS</a> <a href="/tags/ES6/" style="font-size: 19px;">ES6</a> <a href="/tags/Front-End/" style="font-size: 11px;">Front-End</a> <a href="/tags/Generator/" style="font-size: 10px;">Generator</a> <a href="/tags/Github-Pages/" style="font-size: 10px;">Github Pages</a> <a href="/tags/HackerRank/" style="font-size: 18px;">HackerRank</a> <a href="/tags/Hexo/" style="font-size: 11px;">Hexo</a> <a href="/tags/How-Browsers-work/" style="font-size: 10px;">How Browsers work</a> <a href="/tags/JS-Library/" style="font-size: 10px;">JS Library</a> <a href="/tags/JavaScript/" style="font-size: 19px;">JavaScript</a> <a href="/tags/Level1/" style="font-size: 15px;">Level1</a> <a href="/tags/Level2/" style="font-size: 12px;">Level2</a> <a href="/tags/Loops/" style="font-size: 10px;">Loops</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/Problem-Solving/" style="font-size: 17px;">Problem Solving</a> <a href="/tags/Programmers/" style="font-size: 16px;">Programmers</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/RoadMap/" style="font-size: 10px;">RoadMap</a> <a href="/tags/Settings/" style="font-size: 11px;">Settings</a> <a href="/tags/TypeScript/" style="font-size: 11px;">TypeScript</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a>
     </div>
 </div>
 
