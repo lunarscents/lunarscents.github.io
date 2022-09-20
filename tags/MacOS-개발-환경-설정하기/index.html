@@ -2,22 +2,20 @@
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>Kangaroo - LunarScents&#39;s DevLog</title>
+<title>Tag: MacOS 개발 환경 설정하기 - LunarScents&#39;s DevLog</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
- <link rel="canonical" href="https://lunarscents.github.io/2019/07/07/kangaroo/">  <meta name="description" content="You are choreographing a circus show with various animals. For one act, you are given two kangaroos on a number line ready to jump in the positive direction (i.e, toward positive infinity).">
-<meta name="keywords" content="Algorithm,HackerRank,Problem Solving,JavaScript,ES6">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Kangaroo">
-<meta property="og:url" content="https://lunarscents.github.io/2019/07/07/kangaroo/index.html">
+ <link rel="canonical" href="https://lunarscents.github.io/tags/macos-개발-환경-설정하기/">  <meta name="description" content="The logging space of LunarScents.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="LunarScents&#39;s DevLog">
+<meta property="og:url" content="https://lunarscents.github.io/tags/MacOS-개발-환경-설정하기/index.html">
 <meta property="og:site_name" content="LunarScents&#39;s DevLog">
-<meta property="og:description" content="You are choreographing a circus show with various animals. For one act, you are given two kangaroos on a number line ready to jump in the positive direction (i.e, toward positive infinity).">
+<meta property="og:description" content="The logging space of LunarScents.">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://lunarscents.github.io/images/hackerrank.jpeg">
-<meta property="og:updated_time" content="2022-09-02T09:27:33.661Z">
+<meta property="og:image" content="https://lunarscents.github.io/images/og_image.png">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Kangaroo">
-<meta name="twitter:description" content="You are choreographing a circus show with various animals. For one act, you are given two kangaroos on a number line ready to jump in the positive direction (i.e, toward positive infinity).">
-<meta name="twitter:image" content="https://lunarscents.github.io/images/hackerrank.jpeg"> 
+<meta name="twitter:title" content="LunarScents&#39;s DevLog">
+<meta name="twitter:description" content="The logging space of LunarScents.">
+<meta name="twitter:image" content="https://lunarscents.github.io/images/og_image.png"> 
 
 <meta name="naver-site-verification" content="309df9f52d7985799177f717e89004f7376da705">
 
@@ -107,21 +105,32 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-8-widescreen has-order-2 column-main"><div class="card">
+    <div class="card-content">
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="/tags">Tags</a></li>
+            <li class="is-active"><a href="#" aria-current="page">MacOS 개발 환경 설정하기</a></li>
+        </ul>
+        </nav>
+    </div>
+</div>
+
+    <div class="card">
     
     <div class="card-image">
-        <span class="image is-7by1">
-            <img class="thumbnail" src="/images/hackerrank.jpeg" alt="Kangaroo">
-        </span>
+        <a href="/2019/08/17/developmentEnvironmentInMac/" class="image is-7by1">
+            <img class="thumbnail" src="/images/macOS.png" alt="Mac OS 개발 환경 설정 Guide">
+        </a>
     </div>
     
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-07-07T13:34:30.000Z">2019-07-07</time>
+                <time class="level-item has-text-grey" datetime="2019-08-17T14:50:37.000Z">2019-08-17</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Algorithm/HackerRank/">HackerRank</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Algorithm/HackerRank/Problem-Solving/">Problem Solving</a>
+                <a class="has-link-grey -link" href="/categories/Settings/">Settings</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Settings/Development-Environment/">Development Environment</a>
                 </div>
                 
                 
@@ -131,60 +140,21 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                Kangaroo
+                <a class="has-link-black-ter" href="/2019/08/17/developmentEnvironmentInMac/">Mac OS 개발 환경 설정 Guide</a>
             
         </h1>
         <div class="content">
-            <p>You are choreographing a circus show with various animals. For one act, you are given two kangaroos on a number line ready to jump in the positive direction (i.e, toward positive infinity).</p>
-<a id="more"></a>
-
-<ul>
-<li>The first kangaroo starts at location <strong>x1</strong> and moves at a rate of <strong>v1</strong> meters per jump.</li>
-<li>The second kangaroo starts at location <strong>x2</strong> and moves at a rate of <strong>v2</strong> meters per jump.</li>
-</ul>
-<p>You have to figure out a way to get both kangaroos at the same location at the same time as part of the show. If it is possible, return YES, otherwise return NO.</p>
-<p>For example, kangaroo <strong>1</strong> starts at <strong>x1 = 2</strong> with a jump distance <strong>v1 = 1</strong> and kangaroo <strong>2</strong> starts at <strong>x2 = 1</strong> with a jump distance of <strong>v2 = 2</strong>. After one jump, they are both at <strong>x = 3</strong>, (<strong>x1 + v1 = 2 + 1</strong>, <strong>x2 + v2 = 1 + 2</strong>), so our answer is YES.</p>
-<h2 id="Function-Description"><a href="#Function-Description" class="headerlink" title="Function Description"></a>Function Description</h2><p>Complete the function kangaroo in the editor below. It should return YES if they reach the same position at the same time, or NO if they don’t.</p>
-<p>kangaroo has the following parameter(s):</p>
-<ul>
-<li>x1, v1: integers, starting position and jump distance for kangaroo 1</li>
-<li>x2, v2: integers, starting position and jump distance for kangaroo 2</li>
-</ul>
-<h2 id="Input-Format"><a href="#Input-Format" class="headerlink" title="Input Format"></a>Input Format</h2><p>A single line of four space-separated integers denoting the respective values of <strong>x1</strong>, <strong>v1</strong>, <strong>x2</strong>, and <strong>v2</strong>.</p>
-<h2 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h2><ul>
-<li>0 &lt;= x1 &lt;= x2 &lt;= 10000</li>
-<li>0 &lt;= v1 &lt;= 10000</li>
-<li>0 &lt;= v2 &lt;= 10000</li>
-</ul>
-<h2 id="Output-Format"><a href="#Output-Format" class="headerlink" title="Output Format"></a>Output Format</h2><p>Print YES if they can land on the same location at the same time; otherwise, print NO.</p>
-<p>Note: The two kangaroos must land at the same location after making the same number of jumps.</p>
-<h2 id="Sample-Input-0"><a href="#Sample-Input-0" class="headerlink" title="Sample Input 0"></a>Sample Input 0</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 3 4 2</span><br></pre></td></tr></table></figure>
-
-<h2 id="Sample-Output-0"><a href="#Sample-Output-0" class="headerlink" title="Sample Output 0"></a>Sample Output 0</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">YES</span><br></pre></td></tr></table></figure>
-
-<h2 id="Explanation-0"><a href="#Explanation-0" class="headerlink" title="Explanation 0"></a>Explanation 0</h2><p>The two kangaroos jump through the following sequence of locations:</p>
-<p><img src="https://s3.amazonaws.com/hr-assets/0/1516005283-e74e76ff0c-kangaroo.png" alt></p>
-<p>From the image, it is clear that the kangaroos meet at the same location (number <strong>12</strong> on the number line) after same number of jumps (<strong>4</strong> jumps), and we print YES.</p>
-<h2 id="Sample-Input-1"><a href="#Sample-Input-1" class="headerlink" title="Sample Input 1"></a>Sample Input 1</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 2 5 3</span><br></pre></td></tr></table></figure>
-
-<h2 id="Sample-Output-1"><a href="#Sample-Output-1" class="headerlink" title="Sample Output 1"></a>Sample Output 1</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NO</span><br></pre></td></tr></table></figure>
-
-<h2 id="Explanation-1"><a href="#Explanation-1" class="headerlink" title="Explanation 1"></a>Explanation 1</h2><p>The second kangaroo has a starting location that is ahead (further to the right) of the first kangaroo’s starting location (i.e., <strong>x<sub>2</sub> &gt; x<sub>1</sub></strong>). Because the second kangaroo moves at a faster rate (meaning <strong>v<sub>2</sub> &gt; v<sub>1</sub></strong>) and is already ahead of the first kangaroo, the first kangaroo will never be able to catch up. Thus, we print NO.</p>
-<hr>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// Complete the kangaroo function below.</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">kangaroo</span>(<span class="hljs-params">x1, v1, x2, v2</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> (v2 &gt;= v1) ? <span class="hljs-string">'NO'</span> : (!((x1 - x2) % (v2 - v1)) ? <span class="hljs-string">'YES'</span> : <span class="hljs-string">'NO'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
+            <h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><p>처음 MacOS 환경에서 접하는 FrontEnd 개발자 분들에게 개발 환경을 설정하는 방법을 소개하려 합니다.<br>이 글을 통해 기본적인 설정을 쉽게 진행해보시기 바랍니다. (macOS Mojave 기준)</p>
         </div>
         
-        <div class="level is-size-7 is-uppercase">
+        
+        <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/Algorithm/">Algorithm</a>, <a class="has-link-grey -link" href="/tags/ES6/">ES6</a>, <a class="has-link-grey -link" href="/tags/HackerRank/">HackerRank</a>, <a class="has-link-grey -link" href="/tags/JavaScript/">JavaScript</a>, <a class="has-link-grey -link" href="/tags/Problem-Solving/">Problem Solving</a>
+                <a class="button is-size-7 is-light" href="/2019/08/17/developmentEnvironmentInMac/#more">Read More</a>
                 </div>
             </div>
         </div>
-        
         
         
 
@@ -201,52 +171,9 @@
 
 
 
-<div class="card card-transparent">
-    <div class="level post-navigation is-flex-wrap is-mobile">
-        
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/07/08/betweenTwoSets/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">Between Two Sets</span>
-            </a>
-        </div>
-        
-        
-        <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/07/06/mini-maxSum/">
-                <span class="level-item">Mini-Max Sum</span>
-                <i class="level-item fas fa-chevron-right"></i>
-            </a>
-        </div>
-        
-    </div>
-</div>
 
 
 
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">Comments</h3>
-        
-<script>
-    var disqus_config = function () {
-        this.page.url = 'https://lunarscents.github.io/2019/07/07/kangaroo/';
-        this.page.identifier = '2019/07/07/kangaroo/';
-    };
-    (function() {
-        var d = document, s = d.createElement('script');  
-        s.src = '//' + 'LunarScents' + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-
-<div id="disqus_thread">
-    
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-    </div>
-</div>
 </div>
                 
 
@@ -679,7 +606,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/avatar.svg" alt="Kangaroo" height="28">
+                    <img src="/images/avatar.svg" alt="LunarScents&#39;s DevLog" height="28">
                 
                 </a>
                 <p class="is-size-7">
