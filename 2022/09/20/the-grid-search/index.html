@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+<title>The Grid Search - LunarScents&#39;s DevLog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link rel="canonical" href="https://lunarscents.github.io/2022/09/20/the-grid-search/">
+
+    <meta name="description" content="Given an array of strings of digits, try to find the occurrence of a given pattern of digits. In the grid and pattern arrays, each string represents a row in the grid. For example, consider the follow">
+<meta name="keywords" content="Algorithm,HackerRank,Problem Solving,JavaScript,ES6">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Grid Search">
+<meta property="og:url" content="https://lunarscents.github.io/2022/09/20/the-grid-search/index.html">
+<meta property="og:site_name" content="LunarScents&#39;s DevLog">
+<meta property="og:description" content="Given an array of strings of digits, try to find the occurrence of a given pattern of digits. In the grid and pattern arrays, each string represents a row in the grid. For example, consider the follow">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://lunarscents.github.io/images/hackerrank.jpeg">
+<meta property="og:updated_time" content="2022-09-20T00:28:48.847Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="The Grid Search">
+<meta name="twitter:description" content="Given an array of strings of digits, try to find the occurrence of a given pattern of digits. In the grid and pattern arrays, each string represents a row in the grid. For example, consider the follow">
+<meta name="twitter:image" content="https://lunarscents.github.io/images/hackerrank.jpeg">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/avatar.svg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-137179603-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-137179603-1');
+</script>
+
+
+    
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-2-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <i class="fas fa-code"></i>
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/">Home</a>
+                
+                <a class="navbar-item" href="/archives">Archives</a>
+                
+                <a class="navbar-item" href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="Download on GitHub" href="https://lunarscents.github.io">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                
+                <a class="navbar-item search" title="Search" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-8-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-image">
+        <span class="image is-7by1">
+            <img class="thumbnail" src="/images/hackerrank.jpeg" alt="The Grid Search">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2022-09-19T23:00:00.000Z">2022-09-20</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Algorithm/HackerRank/">HackerRank</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Algorithm/HackerRank/Problem-Solving/">Problem Solving</a>
+                </div>
+                
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                The Grid Search
+            
+        </h1>
+        <div class="content">
+            <p>Given an array of strings of digits, try to find the occurrence of a given pattern of digits. In the grid and pattern arrays, each string represents a row in the grid. For example, consider the following grid:</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1234567890</span><br><span class="line">09**876543**21</span><br><span class="line">11**111111**11</span><br><span class="line">11**111111**11</span><br><span class="line">2222222222</span><br></pre></td></tr></table></figure>
+
+<p>The pattern array is:</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">876543</span><br><span class="line">111111</span><br><span class="line">111111</span><br></pre></td></tr></table></figure>
+
+<p>The pattern begins at the second row and the third column of the grid and continues in the following two rows. The pattern is said to be present in the grid. The return value should be <code>YES</code> or <code>NO</code>, depending on whether the pattern is found. In this case, return <code>YES</code>.</p>
+<a id="more"></a>
+
+<h2 id="Function-Description"><a href="#Function-Description" class="headerlink" title="Function Description"></a>Function Description</h2><p>Complete the gridSearch function in the editor below. It should return <code>YES</code> if the pattern exists in the grid, or <code>NO</code> otherwise.</p>
+<p>gridSearch has the following parameter(s):</p>
+<ul>
+<li>string G[R]: the grid to search</li>
+<li>string P[r]: the pattern to search for</li>
+</ul>
+<h2 id="Input-Format"><a href="#Input-Format" class="headerlink" title="Input Format"></a>Input Format</h2><p>The first line contains an integer <code>t</code>, the number of test cases.</p>
+<p>Each of the <code>t</code> test cases is represented as follows:<br>The first line contains two space-separated integers <code>R</code> and <code>C</code>, the number of rows in the search grid <code>G</code> and the length of each row string.<br>This is followed by <code>R</code> lines, each with a string of <code>C</code> digits that represent the grid <code>G</code>.
+The following line contains two space-separated integers, <code>r</code> and <code>c</code>, the number of rows in the pattern grid <code>P</code> and the length of each pattern row string.<br>This is followed by <code>r</code> lines, each with a string of <code>c</code> digits that represent the pattern grid <code>P</code>.</p>
+<h2 id="Returns"><a href="#Returns" class="headerlink" title="Returns"></a>Returns</h2><ul>
+<li>string: either <code>YES</code> or <code>NO</code></li>
+</ul>
+<h2 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h2><ul>
+<li>1 &lt;= t &lt;= 5</li>
+<li>1 &lt;= R, r, C, c &lt;= 1000</li>
+<li>0 &lt;= r &lt;= R</li>
+<li>0 &lt;= c &lt;= C</li>
+</ul>
+<h2 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">10 10</span><br><span class="line">7283455864</span><br><span class="line">6731158619</span><br><span class="line">8988242643</span><br><span class="line">3830589324</span><br><span class="line">2229505813</span><br><span class="line">5633845374</span><br><span class="line">6473530293</span><br><span class="line">7053106601</span><br><span class="line">0834282956</span><br><span class="line">4607924137</span><br><span class="line">3 4</span><br><span class="line">9505</span><br><span class="line">3845</span><br><span class="line">3530</span><br><span class="line">15 15</span><br><span class="line">400453592126560</span><br><span class="line">114213133098692</span><br><span class="line">474386082879648</span><br><span class="line">522356951189169</span><br><span class="line">887109450487496</span><br><span class="line">252802633388782</span><br><span class="line">502771484966748</span><br><span class="line">075975207693780</span><br><span class="line">511799789562806</span><br><span class="line">404007454272504</span><br><span class="line">549043809916080</span><br><span class="line">962410809534811</span><br><span class="line">445893523733475</span><br><span class="line">768705303214174</span><br><span class="line">650629270887160</span><br><span class="line">2 2</span><br><span class="line">99</span><br><span class="line">99</span><br></pre></td></tr></table></figure>
+
+<h2 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">YES</span><br><span class="line">NO</span><br></pre></td></tr></table></figure>
+
+<h2 id="Explanation"><a href="#Explanation" class="headerlink" title="Explanation"></a>Explanation</h2><p>The first test in the input file is:</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">10 10</span><br><span class="line">7283455864</span><br><span class="line">6731158619</span><br><span class="line">8988242643</span><br><span class="line">3830589324</span><br><span class="line">2229505813</span><br><span class="line">5633845374</span><br><span class="line">6473530293</span><br><span class="line">7053106601</span><br><span class="line">0834282956</span><br><span class="line">4607924137</span><br><span class="line">3 4</span><br><span class="line">9505</span><br><span class="line">3845</span><br><span class="line">3530</span><br></pre></td></tr></table></figure>
+
+<p>The pattern is present in the larger grid as marked in bold below.</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">7283455864</span><br><span class="line">6731158619</span><br><span class="line">8988242643</span><br><span class="line">3830589324</span><br><span class="line">2229505813</span><br><span class="line">5633845374</span><br><span class="line">6473530293</span><br><span class="line">7053106601</span><br><span class="line">0834282956</span><br><span class="line">4607924137</span><br></pre></td></tr></table></figure>
+
+<p>The second test in the input file is:</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">15 15</span><br><span class="line">400453592126560</span><br><span class="line">114213133098692</span><br><span class="line">474386082879648</span><br><span class="line">522356951189169</span><br><span class="line">887109450487496</span><br><span class="line">252802633388782</span><br><span class="line">502771484966748</span><br><span class="line">075975207693780</span><br><span class="line">511799789562806</span><br><span class="line">404007454272504</span><br><span class="line">549043809916080</span><br><span class="line">962410809534811</span><br><span class="line">445893523733475</span><br><span class="line">768705303214174</span><br><span class="line">650629270887160</span><br><span class="line">2 2</span><br><span class="line">99</span><br><span class="line">99</span><br></pre></td></tr></table></figure>
+
+<p>The search pattern is:</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">99</span><br><span class="line">99</span><br></pre></td></tr></table></figure>
+
+<p>This pattern is not found in the larger grid.</p>
+<hr>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">/*</span></span><br><span class="line"><span class="hljs-comment"> * Complete the 'gridSearch' function below.</span></span><br><span class="line"><span class="hljs-comment"> *</span></span><br><span class="line"><span class="hljs-comment"> * The function is expected to return a STRING.</span></span><br><span class="line"><span class="hljs-comment"> * The function accepts following parameters:</span></span><br><span class="line"><span class="hljs-comment"> *  1. STRING_ARRAY G</span></span><br><span class="line"><span class="hljs-comment"> *  2. STRING_ARRAY P</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">gridSearch</span>(<span class="hljs-params">G: string[], P: string[]</span>): <span class="hljs-title">string</span> </span>&#123;</span><br><span class="line">  <span class="hljs-comment">// Write your code here</span></span><br><span class="line"></span><br><span class="line">  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>, itotal = G.length - P.length; i &lt;= itotal; i++) &#123;</span><br><span class="line">    <span class="hljs-keyword">let</span> indexes = [];</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> k = <span class="hljs-number">0</span>, ktotal = G[i].length - P[<span class="hljs-number">0</span>].length; k &lt;= ktotal; k++) &#123;</span><br><span class="line">      <span class="hljs-keyword">if</span> (G[i].slice(k, k + P[<span class="hljs-number">0</span>].length) == P[<span class="hljs-number">0</span>]) &#123;</span><br><span class="line">        indexes.push(k);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">if</span> (indexes.length &gt; <span class="hljs-number">0</span>) &#123;</span><br><span class="line">      <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> index <span class="hljs-keyword">of</span> indexes) &#123;</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> j = i + <span class="hljs-number">1</span>, jtotal = P.length + i; j &lt; jtotal; j++) &#123;</span><br><span class="line">          <span class="hljs-keyword">if</span> (G[j].slice(index, index + P[j - i].length) != P[j - i]) &#123;</span><br><span class="line">            <span class="hljs-keyword">break</span>;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="hljs-keyword">if</span> (j - i + <span class="hljs-number">1</span> == P.length) &#123;</span><br><span class="line">            <span class="hljs-keyword">return</span> <span class="hljs-string">'YES'</span>;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-keyword">return</span> <span class="hljs-string">'NO'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Algorithm/">Algorithm</a>, <a class="has-link-grey -link" href="/tags/ES6/">ES6</a>, <a class="has-link-grey -link" href="/tags/HackerRank/">HackerRank</a>, <a class="has-link-grey -link" href="/tags/JavaScript/">JavaScript</a>, <a class="has-link-grey -link" href="/tags/Problem-Solving/">Problem Solving</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4247154102678923" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-4247154102678923" data-ad-slot="4797150355"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2022/09/19/manasa-and-stones/">
+                <span class="level-item">Manasa and Stones</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">Comments</h3>
+        
+<script>
+    var disqus_config = function () {
+        this.page.url = 'https://lunarscents.github.io/2022/09/20/the-grid-search/';
+        this.page.identifier = '2022/09/20/the-grid-search/';
+    };
+    (function() {
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'LunarScents' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<div id="disqus_thread">
+    
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-4-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    
+                        <img class="image is-128x128 has-mb-6" src="/images/avatar.svg" alt="LunarScents">
+                    
+                    
+                    <p class="is-size-4 is-block">
+                        LunarScents
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        Front-end Developer.
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>Seoul</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Posts
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        170
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Categories
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        18
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Tags
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        27
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/lunarscents" target="_blank" rel="external nofollow noopener noreferrer">
+                Follow</a>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="https://github.com/lunarscents" rel="external nofollow noopener noreferrer">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Facebook" href="https://facebook.com" rel="external nofollow noopener noreferrer">
+                
+                <i class="fab fa-facebook"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="RSS" href="/">
+                
+                <i class="fas fa-rss"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Categories
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/Algorithm/">
+            <span class="level-start">
+                <span class="level-item">Algorithm</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">164</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/Algorithm/HackerRank/">
+            <span class="level-start">
+                <span class="level-item">HackerRank</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">122</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Algorithm/Programmers/">
+            <span class="level-start">
+                <span class="level-item">Programmers</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">41</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/Basic-for-Web/">
+            <span class="level-start">
+                <span class="level-item">Basic for Web</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/Basic-for-Web/Browsers/">
+            <span class="level-start">
+                <span class="level-item">Browsers</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/JS-Library/">
+            <span class="level-start">
+                <span class="level-item">JS Library</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/JS-Library/React/">
+            <span class="level-start">
+                <span class="level-item">React</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/Settings/">
+            <span class="level-start">
+                <span class="level-item">Settings</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/Settings/Development-Environment/">
+            <span class="level-start">
+                <span class="level-item">Development Environment</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Settings/Hexo/">
+            <span class="level-start">
+                <span class="level-item">Hexo</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/Tools/">
+            <span class="level-start">
+                <span class="level-item">Tools</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/Tools/Hexo/">
+            <span class="level-start">
+                <span class="level-item">Hexo</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/TypeScript/">
+            <span class="level-start">
+                <span class="level-item">TypeScript</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        
+<div class="card widget">
+  <div class="card-content">
+    <h3 class="menu-label">Recent</h3>
+    
+    <article class="media">
+      
+      <a href="/2022/09/20/the-grid-search/" class="media-left">
+        <p class="image is-64x64">
+          <img class="thumbnail" src="/images/hackerrank.jpeg" alt="The Grid Search">
+        </p>
+      </a>
+      
+      <div class="media-content">
+        <div class="content">
+          <div>
+            <time class="has-text-grey is-size-7 is-uppercase" datetime="2022-09-19T23:00:00.000Z">2022-09-20</time>
+          </div>
+          <a href="/2022/09/20/the-grid-search/" class="has-link-black-ter is-size-6">The Grid Search</a>
+          <p class="is-size-7 is-uppercase">
+            <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a> / <a class="has-link-grey -link" href="/categories/Algorithm/HackerRank/">HackerRank</a>
+          </p>
+        </div>
+      </div>
+    </article>
+    
+    <article class="media">
+      
+      <a href="/2022/09/19/manasa-and-stones/" class="media-left">
+        <p class="image is-64x64">
+          <img class="thumbnail" src="/images/hackerrank.jpeg" alt="Manasa and Stones">
+        </p>
+      </a>
+      
+      <div class="media-content">
+        <div class="content">
+          <div>
+            <time class="has-text-grey is-size-7 is-uppercase" datetime="2022-09-18T23:30:00.000Z">2022-09-19</time>
+          </div>
+          <a href="/2022/09/19/manasa-and-stones/" class="has-link-black-ter is-size-6">Manasa and Stones</a>
+          <p class="is-size-7 is-uppercase">
+            <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a> / <a class="has-link-grey -link" href="/categories/Algorithm/HackerRank/">HackerRank</a>
+          </p>
+        </div>
+      </div>
+    </article>
+    
+    <article class="media">
+      
+      <a href="/2022/09/18/cavity-map/" class="media-left">
+        <p class="image is-64x64">
+          <img class="thumbnail" src="/images/hackerrank.jpeg" alt="Cavity Map">
+        </p>
+      </a>
+      
+      <div class="media-content">
+        <div class="content">
+          <div>
+            <time class="has-text-grey is-size-7 is-uppercase" datetime="2022-09-18T11:11:43.000Z">2022-09-18</time>
+          </div>
+          <a href="/2022/09/18/cavity-map/" class="has-link-black-ter is-size-6">Cavity Map</a>
+          <p class="is-size-7 is-uppercase">
+            <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a> / <a class="has-link-grey -link" href="/categories/Algorithm/HackerRank/">HackerRank</a>
+          </p>
+        </div>
+      </div>
+    </article>
+    
+  </div>
+</div>
+
+<div class="card widget">
+  <div class="card-content">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4247154102678923" crossorigin="anonymous"></script>
+    <!-- sidebar ad -->
+    <ins class="adsbygoogle" style="display: block" data-ad-client="ca-pub-4247154102678923" data-ad-slot="7233959045" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+</div>
+
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2022/09/">
+                <span class="level-start">
+                    <span class="level-item">September 2022</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">11</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/09/">
+                <span class="level-start">
+                    <span class="level-item">September 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">5</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">18</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">40</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">86</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/05/">
+                <span class="level-start">
+                    <span class="level-item">May 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">6</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Tag Cloud
+        </h3>
+        <a href="/tags/10Days-of-JS/" style="font-size: 13.64px;">10Days of JS</a> <a href="/tags/30Days-of-Code/" style="font-size: 14.55px;">30Days of Code</a> <a href="/tags/Algorithm/" style="font-size: 20px;">Algorithm</a> <a href="/tags/Basic-for-Web/" style="font-size: 10px;">Basic for Web</a> <a href="/tags/Blog/" style="font-size: 10px;">Blog</a> <a href="/tags/Browsers/" style="font-size: 10px;">Browsers</a> <a href="/tags/Development-Environment-in-MacOS/" style="font-size: 10px;">Development Environment in MacOS</a> <a href="/tags/ES6/" style="font-size: 19.09px;">ES6</a> <a href="/tags/Front-End/" style="font-size: 10.91px;">Front-End</a> <a href="/tags/Generator/" style="font-size: 10px;">Generator</a> <a href="/tags/Github-Pages/" style="font-size: 10px;">Github Pages</a> <a href="/tags/HackerRank/" style="font-size: 18.18px;">HackerRank</a> <a href="/tags/Hexo/" style="font-size: 10.91px;">Hexo</a> <a href="/tags/How-Browsers-work/" style="font-size: 10px;">How Browsers work</a> <a href="/tags/JS-Library/" style="font-size: 10px;">JS Library</a> <a href="/tags/JavaScript/" style="font-size: 19.09px;">JavaScript</a> <a href="/tags/Level1/" style="font-size: 15.45px;">Level1</a> <a href="/tags/Level2/" style="font-size: 12.73px;">Level2</a> <a href="/tags/Loops/" style="font-size: 10px;">Loops</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/Problem-Solving/" style="font-size: 17.27px;">Problem Solving</a> <a href="/tags/Programmers/" style="font-size: 16.36px;">Programmers</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/RoadMap/" style="font-size: 10px;">RoadMap</a> <a href="/tags/Settings/" style="font-size: 10.91px;">Settings</a> <a href="/tags/TypeScript/" style="font-size: 11.82px;">TypeScript</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a>
+    </div>
+</div>
+
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen is-sticky">
+        
+        </div>
+    
+</div>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/avatar.svg" alt="The Grid Search" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2022 LunarScents&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a> & <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="external nofollow noopener noreferrer">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/" rel="external nofollow noopener noreferrer">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/" rel="external nofollow noopener noreferrer">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus" rel="external nofollow noopener noreferrer">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>
+  moment.locale("en");
+</script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4247154102678923" crossorigin="anonymous"></script>
+
+  
+    
+    <script src="/js/animation.js"></script>
+    
+  
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+  
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/" rel="external nofollow noopener noreferrer" target="_blank">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+  
+
+<a id="back-to-top" title="Back to Top" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+  
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+    <script src="/js/clipboard.js" defer></script>
+    
+     <script src="/js/main.js" defer></script>
+
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something...">
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+
+</body>
+</html>
