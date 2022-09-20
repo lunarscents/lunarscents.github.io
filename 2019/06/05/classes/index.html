@@ -12,12 +12,12 @@
 <meta property="og:site_name" content="LunarScents&#39;s DevLog">
 <meta property="og:description" content="ObjectiveIn this challenge, we practice using JavaScript classes. Check the attached tutorial for more details.">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://lunarscents.github.io/images/og_image.png">
-<meta property="og:updated_time" content="2022-09-02T09:27:33.634Z">
+<meta property="og:image" content="https://lunarscents.github.io/images/hackerrank.jpeg">
+<meta property="og:updated_time" content="2022-09-20T14:56:34.724Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Day 4: Classes">
 <meta name="twitter:description" content="ObjectiveIn this challenge, we practice using JavaScript classes. Check the attached tutorial for more details.">
-<meta name="twitter:image" content="https://lunarscents.github.io/images/og_image.png"> 
+<meta name="twitter:image" content="https://lunarscents.github.io/images/hackerrank.jpeg"> 
 
 <meta name="naver-site-verification" content="309df9f52d7985799177f717e89004f7376da705">
 
@@ -108,6 +108,12 @@
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-8-widescreen has-order-2 column-main"><div class="card">
     
+    <div class="card-image">
+        <span class="image is-7by1">
+            <img class="thumbnail" src="/images/hackerrank.jpeg" alt="Day 4: Classes">
+        </span>
+    </div>
+    
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
@@ -141,14 +147,14 @@
 <h2 id="Input-Format"><a href="#Input-Format" class="headerlink" title="Input Format"></a>Input Format</h2><p>There is no input for this challenge.</p>
 <h2 id="Output-Format"><a href="#Output-Format" class="headerlink" title="Output Format"></a>Output Format</h2><p>The perimeter method must return the polygon’s perimeter using the side length array passed to the constructor.</p>
 <h2 id="Explanation"><a href="#Explanation" class="headerlink" title="Explanation"></a>Explanation</h2><p>Consider the following code:</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// Create a polygon with side lengths 3, 4, and 5</span><br><span class="line">let triangle = new Polygon([3, 4, 5]);</span><br><span class="line">  </span><br><span class="line">// Print the perimeter</span><br><span class="line">console.log(triangle.perimeter());</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// Create a polygon with side lengths 3, 4, and 5</span><br><span class="line">let triangle = new Polygon([3, 4, 5]);</span><br><span class="line"></span><br><span class="line">// Print the perimeter</span><br><span class="line">console.log(triangle.perimeter());</span><br></pre></td></tr></table></figure>
 
 <p>When executed with a properly implemented Polygon class, this code should print the result of <strong>3 + 4 + 5 = 12</strong>.</p>
 <br>
 <br>
 
 <hr>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">/*</span></span><br><span class="line"><span class="hljs-comment"> * Implement a Polygon class with the following properties:</span></span><br><span class="line"><span class="hljs-comment"> * 1. A constructor that takes an array of integer side lengths.</span></span><br><span class="line"><span class="hljs-comment"> * 2. A 'perimeter' method that returns the sum of the Polygon's side lengths.</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Polygon</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">constructor</span>(args) &#123;</span><br><span class="line">        <span class="hljs-keyword">this</span>.values = args;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    perimeter() &#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-function">(<span class="hljs-params"><span class="hljs-keyword">this</span>.values || []</span>).<span class="hljs-params">reduce</span>(<span class="hljs-params">(target, item</span>) =&gt;</span> target + item);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">/*</span></span><br><span class="line"><span class="hljs-comment"> * Implement a Polygon class with the following properties:</span></span><br><span class="line"><span class="hljs-comment"> * 1. A constructor that takes an array of integer side lengths.</span></span><br><span class="line"><span class="hljs-comment"> * 2. A 'perimeter' method that returns the sum of the Polygon's side lengths.</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Polygon</span> </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">constructor</span>(args) &#123;</span><br><span class="line">    <span class="hljs-keyword">this</span>.values = args;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  perimeter() &#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-function">(<span class="hljs-params"><span class="hljs-keyword">this</span>.values || []</span>).<span class="hljs-params">reduce</span>(<span class="hljs-params">(target, item</span>) =&gt;</span> target + item);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <hr>
 
@@ -288,7 +294,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        27
+                        32
                     </p>
                 </div>
             </div>
@@ -635,7 +641,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/10Days-of-JS/" style="font-size: 13.64px;">10Days of JS</a> <a href="/tags/30Days-of-Code/" style="font-size: 14.55px;">30Days of Code</a> <a href="/tags/Algorithm/" style="font-size: 20px;">Algorithm</a> <a href="/tags/Basic-for-Web/" style="font-size: 10px;">Basic for Web</a> <a href="/tags/Blog/" style="font-size: 10px;">Blog</a> <a href="/tags/Browsers/" style="font-size: 10px;">Browsers</a> <a href="/tags/Development-Environment-in-MacOS/" style="font-size: 10px;">Development Environment in MacOS</a> <a href="/tags/ES6/" style="font-size: 19.09px;">ES6</a> <a href="/tags/Front-End/" style="font-size: 10.91px;">Front-End</a> <a href="/tags/Generator/" style="font-size: 10px;">Generator</a> <a href="/tags/Github-Pages/" style="font-size: 10px;">Github Pages</a> <a href="/tags/HackerRank/" style="font-size: 18.18px;">HackerRank</a> <a href="/tags/Hexo/" style="font-size: 10.91px;">Hexo</a> <a href="/tags/How-Browsers-work/" style="font-size: 10px;">How Browsers work</a> <a href="/tags/JS-Library/" style="font-size: 10px;">JS Library</a> <a href="/tags/JavaScript/" style="font-size: 19.09px;">JavaScript</a> <a href="/tags/Level1/" style="font-size: 15.45px;">Level1</a> <a href="/tags/Level2/" style="font-size: 12.73px;">Level2</a> <a href="/tags/Loops/" style="font-size: 10px;">Loops</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/Problem-Solving/" style="font-size: 17.27px;">Problem Solving</a> <a href="/tags/Programmers/" style="font-size: 16.36px;">Programmers</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/RoadMap/" style="font-size: 10px;">RoadMap</a> <a href="/tags/Settings/" style="font-size: 10.91px;">Settings</a> <a href="/tags/TypeScript/" style="font-size: 11.82px;">TypeScript</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a>
+        <a href="/tags/10Days-of-JS/" style="font-size: 13.64px;">10Days of JS</a> <a href="/tags/30Days-of-Code/" style="font-size: 14.55px;">30Days of Code</a> <a href="/tags/Algorithm/" style="font-size: 20px;">Algorithm</a> <a href="/tags/Basic-for-Web/" style="font-size: 10px;">Basic for Web</a> <a href="/tags/Blog/" style="font-size: 10px;">Blog</a> <a href="/tags/Browsers/" style="font-size: 10px;">Browsers</a> <a href="/tags/Development-Environment-in-MacOS/" style="font-size: 10px;">Development Environment in MacOS</a> <a href="/tags/ES6/" style="font-size: 19.09px;">ES6</a> <a href="/tags/Front-End/" style="font-size: 10.91px;">Front-End</a> <a href="/tags/Generator/" style="font-size: 10px;">Generator</a> <a href="/tags/Github-Page-with-Hexo/" style="font-size: 10px;">Github Page with Hexo</a> <a href="/tags/Github-Pages/" style="font-size: 10px;">Github Pages</a> <a href="/tags/HackerRank/" style="font-size: 18.18px;">HackerRank</a> <a href="/tags/Hexo/" style="font-size: 10.91px;">Hexo</a> <a href="/tags/Hexo-Icarus-theme/" style="font-size: 10px;">Hexo Icarus theme</a> <a href="/tags/Hexo-블로그-만들기/" style="font-size: 10px;">Hexo 블로그 만들기</a> <a href="/tags/Hexo-Github/" style="font-size: 10px;">Hexo+Github</a> <a href="/tags/How-Browsers-work/" style="font-size: 10px;">How Browsers work</a> <a href="/tags/JS-Library/" style="font-size: 10px;">JS Library</a> <a href="/tags/JavaScript/" style="font-size: 19.09px;">JavaScript</a> <a href="/tags/Level1/" style="font-size: 15.45px;">Level1</a> <a href="/tags/Level2/" style="font-size: 12.73px;">Level2</a> <a href="/tags/Loops/" style="font-size: 10px;">Loops</a> <a href="/tags/MacOS-개발-환경/" style="font-size: 10px;">MacOS 개발 환경</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/Problem-Solving/" style="font-size: 17.27px;">Problem Solving</a> <a href="/tags/Programmers/" style="font-size: 16.36px;">Programmers</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/RoadMap/" style="font-size: 10px;">RoadMap</a> <a href="/tags/Settings/" style="font-size: 10.91px;">Settings</a> <a href="/tags/TypeScript/" style="font-size: 11.82px;">TypeScript</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a>
     </div>
 </div>
 
