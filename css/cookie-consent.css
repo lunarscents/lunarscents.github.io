@@ -1,0 +1,55 @@
+/* ---------------------------------
+ *         Cookie Consent
+ * --------------------------------- */
+.cc-window,
+.cc-revoke {
+  font-size: 1.1rem !important;
+  font-family: 'Ubuntu', 'Roboto', 'Open Sans', 'Microsoft YaHei', sans-serif !important;
+}
+
+.cc-window {
+  color: #4a4a4a !important;
+  background-color: #fff !important;
+}
+
+.cc-window.cc-floating {
+  border-radius: 4px;
+  box-shadow: 0 4px 10px rgb(0 0 0 / 5%), 0 0 1px rgb(0 0 0 / 10%);
+}
+
+.cc-window.cc-banner {
+  background-color: #f9f9f9 !important;
+}
+
+.cc-window.cc-theme-block,
+.cc-window.cc-theme-classic .cc-compliance > .cc-btn {
+  border-radius: 290486px;
+}
+
+.cc-window .cc-compliance > .cc-btn {
+  font-weight: 400;
+  border: none;
+  color: #fff;
+  background-color: #3273dc;
+}
+
+.cc-window .cc-compliance > .cc-btn:hover,
+.cc-window .cc-compliance > .cc-btn:focus {
+  background-color: #276cda;
+}
+
+.cc-window .cc-compliance > .cc-btn.cc-deny:hover {
+  color: #3273dc;
+  text-decoration: none;
+}
+
+.cc-revoke {
+  padding: 0.5rem 1rem !important;
+  color: #fff !important;
+  background-color: #3273dc !important;
+}
+
+.cc-revoke:hover {
+  text-decoration: none !important;
+  background-color: #3273dc;
+}
